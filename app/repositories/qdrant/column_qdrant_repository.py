@@ -27,3 +27,10 @@ class ColumnQdrantRepository:
             batch_points = [PointStruct(id=id, vector=embedding, payload=asdict(payload)) for id, embedding, payload in
                             batch]
             await self.client.upsert(collection_name=self.collection_name, points=batch_points)
+
+    async def search(self, embedding: list[float], score_threshold: float = 0.6, limit: int = 5) -> list[ColumnInfo]:
+        result = await self.client.query_points(collection_name=self.collection_name,
+                                                query=embedding,
+                                                score_threshold=score_threshold,
+                                                limit=limit)
+        return [ColumnInfo(**point.payload) for point in result.points]

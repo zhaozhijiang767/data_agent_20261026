@@ -43,3 +43,4 @@ es:
 llm:
   model_name: deepseek-v4-flash-0731
   api_key: sk-ws-H.YMHMYHL.HHEC.MEUCID0Dn39XCpBLM11qdm0cIFrKZGHU2AAiYwcUkmEtWOYdAiEAqU3GP7-RaIiCskHZBTe02HPm9V17JcWPmwLgV-AXTJ0
+  base_url: https://ws-8m0ns9w20tc9i1ra.cn-beijing.maas.aliyuncs.com/compatible-mode/v1
